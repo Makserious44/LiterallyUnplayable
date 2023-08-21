@@ -8,6 +8,8 @@ public class ObjectReturn : MonoBehaviour
     private Vector3 startPosition;
     private Quaternion startRotation;
     private Interactable interactable;
+    public bool isHeld;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,8 @@ public class ObjectReturn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (startPosition.y - gameObject.transform.position.y >= 0.5)
+        isHeld = ComplexThrowableCopy.holdingHands.Count > 0;
+        if (startPosition.y - gameObject.transform.position.y >= 0.5 && !isHeld)
         {
             gameObject.transform.position = startPosition;
             gameObject.transform.rotation = startRotation;
