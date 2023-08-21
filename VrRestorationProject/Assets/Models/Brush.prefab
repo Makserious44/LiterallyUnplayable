@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 2174824465678656688}
   - component: {fileID: 2812187154050162829}
   - component: {fileID: 5615310457849533813}
-  - component: {fileID: 2727090540782285657}
   - component: {fileID: 5660424008094797582}
   - component: {fileID: 5278143735028556934}
   - component: {fileID: 697690914535298839}
   - component: {fileID: 4381431547320533462}
+  - component: {fileID: 7673902320834052414}
   m_Layer: 0
   m_Name: Brush
   m_TagString: Untagged
@@ -88,27 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2727090540782285657
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008967672827090024}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.00048296642, y: 0.00047631474, z: 0.004749121}
-  m_Center: {x: -0.00001590894, y: -7.275958e-12, z: -0.000863606}
 --- !u!54 &5660424008094797582
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -217,3 +196,25 @@ MonoBehaviour:
   attachForceDamper: 25
   attachMode: 0
   attachmentFlags: 0
+  holdingHands: []
+--- !u!65 &7673902320834052414
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008967672827090024}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00048296642, y: 0.00047631474, z: 0.004254912}
+  m_Center: {x: -0.00001590894, y: -7.275958e-12, z: -0.0006}

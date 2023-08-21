@@ -20,7 +20,7 @@ public class ObjectReturn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isHeld = ComplexThrowableCopy.holdingHands.Count > 0;
+        isHeld = GetComponent<ComplexThrowableCopy>().holdingHands.Count > 0;
         if (startPosition.y - gameObject.transform.position.y >= 0.5 && !isHeld)
         {
             gameObject.transform.position = startPosition;

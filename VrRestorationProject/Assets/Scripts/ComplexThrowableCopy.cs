@@ -28,7 +28,7 @@ namespace Valve.VR.InteractionSystem
 		[EnumFlags]
 		public Hand.AttachmentFlags attachmentFlags = 0;
 
-        public static List<Hand> holdingHands = new List<Hand>();
+        public List<Hand> holdingHands = new List<Hand>();
 		private List<Rigidbody> holdingBodies = new List<Rigidbody>();
 		private List<Vector3> holdingPoints = new List<Vector3>();
 
