@@ -454,25 +454,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &686772040 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
-  m_PrefabInstance: {fileID: 1678156181}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &686772046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686772040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2101b36ccbd4f674f8c68fecc77d93a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHead: {fileID: 764514127}
-  deviation: 0
 --- !u!1 &695301811 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3440654350292866457, guid: 97f18b8399eb5a744a717b8378b6e2d5, type: 3}
@@ -619,11 +600,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.011245817, y: 0.0057415348, z: 0.0042560897}
   m_Center: {x: 0.000035736528, y: -0.0000000073826425, z: -0.002208147}
---- !u!20 &764514127 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 2014920, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
-  m_PrefabInstance: {fileID: 1678156181}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &820996852
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,10 +899,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 686772046}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
 --- !u!4 &2071381035 stripped
 Transform:
@@ -1280,6 +1253,10 @@ PrefabInstance:
     - target: {fileID: 1008967672827090024, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
       propertyPath: m_Name
       value: Brush
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008967672827090024, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1008967672827090024, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
       propertyPath: m_TagString

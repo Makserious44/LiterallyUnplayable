@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 
 [RequireComponent(typeof(ComplexThrowableCopy))]
 
-public class ObjectReturn : MonoBehaviour
+public class ToolReturn : MonoBehaviour
 {
     private Vector3 startPosition;
     private Quaternion startRotation;
@@ -22,6 +22,15 @@ public class ObjectReturn : MonoBehaviour
     void Update()
     {
         isHeld = GetComponent<ComplexThrowableCopy>().holdingHands.Count > 0;
+
+        if (isHeld)
+        {
+            gameObject.tag = "IsHeld";
+        }
+        else
+        {
+            gameObject.tag = "Untagged";
+        }
 
         if (startPosition.y - gameObject.transform.position.y >= 0.5 && !isHeld)
         {
