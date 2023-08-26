@@ -5,22 +5,30 @@ using Valve.VR;
 
 public class ToolActionHandScript : MonoBehaviour
 {
-    public SteamVR_Action_Boolean handGrab;
-    public SteamVR_Action_Boolean toolInteract;
-    public SteamVR_Input_Sources hand;
-    private GameObject tool;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool isGrabbing;
+    public bool isInteracting;
+    public SteamVR_Input_Sources Hand;
+    public SteamVR_Action_Boolean HandGripButton;
+    public SteamVR_Action_Boolean HandInteractButton;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (handGrab.GetStateDown(hand))
+        if (HandGripButton.GetState(Hand))
         {
-            tool = gameObject.
+            isGrabbing = true;
+        }
+        else
+        {
+            isGrabbing = false;
+        }
+
+        if (HandInteractButton.GetState(Hand))
+        {
+            isInteracting = true;
+        }
+        else
+        {
+            isInteracting = false;
         }
     }
 }
