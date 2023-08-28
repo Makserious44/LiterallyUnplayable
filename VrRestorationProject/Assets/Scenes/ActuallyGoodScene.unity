@@ -1316,30 +1316,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 977251554740113372, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 977251554740113372, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1008967672827090024, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
       propertyPath: m_Name
       value: Brush
       objectReference: {fileID: 0}
-    - target: {fileID: 1008967672827090024, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1008967672827090024, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 2174824465678656688, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 2174824465678656688, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 2174824465678656688, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 40
-      objectReference: {fileID: 0}
+    - target: {fileID: 2037919301512702492, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
+      propertyPath: LeftHand
+      value: 
+      objectReference: {fileID: 776585931}
+    - target: {fileID: 2037919301512702492, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
+      propertyPath: RightHand
+      value: 
+      objectReference: {fileID: 1571182940}
     - target: {fileID: 2174824465678656688, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.3830004
@@ -1358,15 +1354,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2174824465678656688, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000000104308114
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2174824465678656688, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2174824465678656688, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2174824465678656688, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1380,107 +1376,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2174824465678656688, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4381431547320533462, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      propertyPath: attachMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4381431547320533462, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      propertyPath: attachForce
-      value: 15000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4381431547320533462, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      propertyPath: attachmentFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4381431547320533462, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      propertyPath: attachForceDamper
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5278143735028556934, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      propertyPath: attachEaseIn
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5278143735028556934, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      propertyPath: hideHandOnAttach
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5278143735028556934, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      propertyPath: setRangeOfMotionOnPickup
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
-    - {fileID: 4381431547320533462, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-    - {fileID: 3959532814534711581, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-    - {fileID: 5897967101308236745, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1008967672827090024, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6444364203170842457}
-    - targetCorrespondingSourceObject: {fileID: 1008967672827090024, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6444364203170842456}
-    - targetCorrespondingSourceObject: {fileID: 1008967672827090024, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6444364203170842464}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
---- !u!1 &6444364203170842455 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1008967672827090024, guid: 1da7b3f1145f4d2448913475b543b350, type: 3}
-  m_PrefabInstance: {fileID: 6444364203170842454}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6444364203170842456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6444364203170842455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 661e5f230adaa0a4ab5b9c26d28bca49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isHeld: 0
---- !u!114 &6444364203170842457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6444364203170842455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 661b0488443f619429f8019d7ffa5feb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachForce: 800
-  attachForceDamper: 25
-  attachMode: 0
-  attachmentFlags: 8
-  holdingHands: []
---- !u!114 &6444364203170842464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6444364203170842455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978240d25a9b9fb44a1234524eace55e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagToInteract: RemovedByBrush
-  RightHand: {fileID: 1571182940}
-  LeftHand: {fileID: 776585931}
-  activeMaterial: {fileID: 2100000, guid: fd7dddbf8b356934a835b20f8f1381c2, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

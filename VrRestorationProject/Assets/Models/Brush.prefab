@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 5615310457849533813}
   - component: {fileID: 5660424008094797582}
   - component: {fileID: 5278143735028556934}
-  - component: {fileID: 4381431547320533462}
   - component: {fileID: 7673902320834052414}
-  - component: {fileID: 3959532814534711581}
-  - component: {fileID: 5897967101308236745}
+  - component: {fileID: 8833642025514767806}
+  - component: {fileID: 5773144229512088163}
+  - component: {fileID: 2037919301512702492}
+  - component: {fileID: 977251554740113372}
   m_Layer: 0
   m_Name: Brush
   m_TagString: Untagged
@@ -32,10 +33,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008967672827090024}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000104308114, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.12916815, y: 2.155, z: -2.575}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 40, y: 40, z: 40}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -134,9 +135,9 @@ MonoBehaviour:
   hideSkeletonOnAttach: 0
   hideControllerOnAttach: 0
   handAnimationOnPickup: 0
-  setRangeOfMotionOnPickup: -1
+  setRangeOfMotionOnPickup: 0
   useHandObjectAttachmentPoint: 1
-  attachEaseIn: 1
+  attachEaseIn: 0
   snapAttachEaseInCurve:
     serializedVersion: 2
     m_Curve:
@@ -168,23 +169,6 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!114 &4381431547320533462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008967672827090024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 661b0488443f619429f8019d7ffa5feb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachForce: 800
-  attachForceDamper: 25
-  attachMode: 0
-  attachmentFlags: 0
-  holdingHands: []
 --- !u!65 &7673902320834052414
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -206,7 +190,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00048296642, y: 0.00047631474, z: 0.004254912}
   m_Center: {x: -0.00001590894, y: -7.275958e-12, z: -0.0006}
---- !u!114 &3959532814534711581
+--- !u!114 &8833642025514767806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008967672827090024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661b0488443f619429f8019d7ffa5feb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attachForce: 800
+  attachForceDamper: 25
+  attachMode: 0
+  attachmentFlags: 8
+  holdingHands: []
+--- !u!114 &5773144229512088163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008967672827090024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661e5f230adaa0a4ab5b9c26d28bca49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHeld: 0
+--- !u!114 &2037919301512702492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,16 +233,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagToInteract: RemovedByBrush
---- !u!114 &5897967101308236745
-MonoBehaviour:
+  RightHand: {fileID: 0}
+  LeftHand: {fileID: 0}
+  defaultMaterial: {fileID: 2100000, guid: 35939b8f56f7255418ce88a0ce87d9ce, type: 2}
+  triggerMaterial: {fileID: 2100000, guid: fd7dddbf8b356934a835b20f8f1381c2, type: 2}
+--- !u!95 &977251554740113372
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008967672827090024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 234bf492f7fab2b4dbc8abd0540b0ca3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isHeld: 0
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd6357bf935dc2048864a52d9f406812, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

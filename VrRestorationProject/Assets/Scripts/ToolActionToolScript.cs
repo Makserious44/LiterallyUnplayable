@@ -12,11 +12,25 @@ public class ToolActionToolScript : MonoBehaviour
 
     public ToolActionHandScript RightHand;
     public ToolActionHandScript LeftHand;
+
     private int holdingHandsCount;
+    private Animator animator;
+
+    /*private void stopAnim()
+    {
+        animator.
+    }*/
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void InteractAction(Collider TriggerObject)
     {
-        Destroy(TriggerObject.gameObject);
+        animator.Play("BrushActionAnim");
+        Destroy(TriggerObject.gameObject, 2);
+        //Invoke("stopAnim", 2);
     }
 
     private void UpdateHand(ToolActionHandScript Hand, Collider TriggerObject)
@@ -32,7 +46,7 @@ public class ToolActionToolScript : MonoBehaviour
         holdingHandsCount = GetComponent<ComplexThrowableCopy>().holdingHands.Count;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == tagToInteract && holdingHandsCount > 0)
         {
