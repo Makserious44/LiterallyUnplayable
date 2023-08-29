@@ -16,21 +16,22 @@ public class ToolActionToolScript : MonoBehaviour
     private int holdingHandsCount;
     private Animator animator;
 
-    /*private void stopAnim()
+    private void stopAnim()
     {
-        animator.
-    }*/
+        animator.SetBool("isInAction", false);
+    }
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void InteractAction(Collider TriggerObject)
     {
-        animator.Play("BrushActionAnim");
+        animator.SetBool("isInAction", true);
+        //animator.Play("BrushAction");
         Destroy(TriggerObject.gameObject, 2);
-        //Invoke("stopAnim", 2);
+        Invoke("stopAnim", 2);
     }
 
     private void UpdateHand(ToolActionHandScript Hand, Collider TriggerObject)
