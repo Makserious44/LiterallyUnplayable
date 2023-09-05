@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using Valve.VR;
 
 public class ToolActionHandScript : MonoBehaviour
 {
+    [TagField]
+    [SerializeField] public string tagToInteract;
+
     public bool isGrabbing;
     public bool isInteracting;
     public SteamVR_Input_Sources Hand;
@@ -29,6 +33,14 @@ public class ToolActionHandScript : MonoBehaviour
         else
         {
             isInteracting = false;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == tagToInteract && HandInteractButton.GetStateDown(Hand))
+        {
+            other.gameObject.GetComponent<ToolActionObjectScript>().Interaction();
         }
     }
 }

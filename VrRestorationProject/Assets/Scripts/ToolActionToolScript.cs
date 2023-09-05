@@ -49,7 +49,7 @@ public class ToolActionToolScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == tagToInteract && holdingHandsCount > 0)
+        if (other.tag == tagToInteract && holdingHandsCount > 0 && other.gameObject.GetComponent<ToolActionObjectScript>().isActive)
         {
             UpdateHand(RightHand, other);
             UpdateHand(LeftHand, other);
