@@ -7,9 +7,13 @@ using UnityEngine.Events;
 [Serializable]
 public class callObjectsActivate : UnityEvent {}
 
+[Serializable]
+public class callObjectsDectivate : UnityEvent { }
+
 public class ToolActionObjectScript : MonoBehaviour
 {
     public callObjectsActivate callObject;
+    public callObjectsDectivate decallObject;
     public int requiresCallsToActivate;
     public bool isActive;
 
@@ -24,6 +28,16 @@ public class ToolActionObjectScript : MonoBehaviour
         if (callsCount == requiresCallsToActivate)
         {
             isActive = true;
+        }
+    }
+
+    public void deactivationGate()
+    {
+        callsCount--;
+
+        if (callsCount != requiresCallsToActivate)
+        {
+            isActive = false;
         }
     }
 

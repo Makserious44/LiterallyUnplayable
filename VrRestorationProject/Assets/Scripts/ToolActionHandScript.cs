@@ -38,9 +38,12 @@ public class ToolActionHandScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == tagToInteract && HandInteractButton.GetStateDown(Hand))
+        if (other.tag == tagToInteract)
         {
-            other.gameObject.GetComponent<ToolActionObjectScript>().Interaction();
+            if (HandInteractButton.GetStateDown(Hand))
+            {
+                other.gameObject.GetComponent<LeafHolderScript>().Interaction();
+            }
         }
     }
 }
