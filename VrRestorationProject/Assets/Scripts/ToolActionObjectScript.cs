@@ -10,10 +10,15 @@ public class callObjectsActivate : UnityEvent {}
 [Serializable]
 public class callObjectsDectivate : UnityEvent { }
 
+[Serializable]
+public class callObjectInteract : UnityEvent { }
+
 public class ToolActionObjectScript : MonoBehaviour
 {
     public callObjectsActivate callObject;
     public callObjectsDectivate decallObject;
+    public callObjectInteract interactionObject;
+
     public int requiresCallsToActivate;
     public bool isActive;
 
@@ -43,6 +48,7 @@ public class ToolActionObjectScript : MonoBehaviour
 
     public void Interaction()
     {
+        interactionObject.Invoke();
         isActive = false;
     }
 }
