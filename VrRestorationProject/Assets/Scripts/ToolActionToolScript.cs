@@ -1,15 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+
+[Serializable]
+public class toolInteractionEvent : UnityEvent { }
 
 public class ToolActionToolScript : MonoBehaviour
 {
     [TagField]
     [SerializeField] public string tagToInteract;
 
+    public toolInteractionEvent toolEvent;
     public ToolActionHandScript RightHand;
     public ToolActionHandScript LeftHand;
 
@@ -28,10 +34,17 @@ public class ToolActionToolScript : MonoBehaviour
 
     private void InteractAction(Collider TriggerObject)
     {
-        animator.SetBool("isInAction", true);
+        if (animator != null)
+        {
+            animator.SetBool("isInAction", true);
+            Invoke("stopAnim", 2);
+        }
+        if (toolEvent != null)
+        {
+            toolEvent.Invoke();
+        }
         //animator.Play("BrushAction");
         Destroy(TriggerObject.gameObject, 2);
-        Invoke("stopAnim", 2);
     }
 
     private void UpdateHand(ToolActionHandScript Hand, Collider TriggerObject)
