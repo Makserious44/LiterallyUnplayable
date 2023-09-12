@@ -6,16 +6,19 @@ using Valve.VR.InteractionSystem;
 
 [RequireComponent(typeof(Interactable))]
 [RequireComponent(typeof(ComplexThrowableCopy))]
-[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(ObjectReturn))]
+[RequireComponent(typeof(ToolActionToolScript))]
 
 public class PaintingCanvasPopScript : MonoBehaviour
 {
     private Transform parentObject;
     public void canvasPop()
     {
+        Debug.Log($"{gameObject.name} popped");
         GetComponent<Interactable>().enabled = true;
         GetComponent<ObjectReturn>().enabled = true;
+        GetComponent<ToolActionToolScript>().enabled = true;
+        gameObject.AddComponent<Rigidbody>();
     }
 
     private void Start()
@@ -24,12 +27,14 @@ public class PaintingCanvasPopScript : MonoBehaviour
         GetComponent<Interactable>().enabled = false;
         GetComponent<ObjectReturn>().enabled = false;
         GetComponent<ComplexThrowableCopy>().enabled = false;
+        GetComponent<ToolActionToolScript>().enabled = false;
     }
 
     private void Update()
     {
         if (GetComponent<ObjectReturn>().isHeld)
         {
+            Debug.Log($"{gameObject.name} unfixed");
             GetComponent<ComplexThrowableCopy>().enabled = true;
             gameObject.transform.parent = null;
         }
@@ -37,7 +42,8 @@ public class PaintingCanvasPopScript : MonoBehaviour
 
     public void canvasReturn()
     {
-        parentObject = gameObject.transform.parent;
+        Destroy(gameObject.GetComponent(typeof(Rigidbody)));
+        gameObject.transform.parent = parentObject;
         gameObject.transform.position = Vector3.zero;
         gameObject.transform.rotation = new Quaternion();
         GetComponent<ComplexThrowableCopy>().enabled = false;
@@ -47,5 +53,6 @@ public class PaintingCanvasPopScript : MonoBehaviour
     {
         GetComponent<Interactable>().enabled = false;
         GetComponent<ObjectReturn>().enabled = false;
+        GetComponent<ToolActionToolScript>().enabled = false;
     }
 }

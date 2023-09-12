@@ -48,6 +48,7 @@ public class ToolActionObjectScript : MonoBehaviour
 
     public void Interaction()
     {
+        Debug.Log($"{gameObject.name} activated");
         interactionObject.Invoke();
         isActive = false;
     }
