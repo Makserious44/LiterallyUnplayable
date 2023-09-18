@@ -13,14 +13,19 @@ public class callObjectsDectivate : UnityEvent { }
 [Serializable]
 public class callObjectInteract : UnityEvent { }
 
+[Serializable]
+public class callObjectDeactivateEvent : UnityEvent { }
+
 public class ToolActionObjectScript : MonoBehaviour
 {
     public callObjectsActivate callObject;
     public callObjectsDectivate decallObject;
     public callObjectInteract interactionObject;
+    public callObjectDeactivateEvent deactivationEvent;
 
     public int requiresCallsToActivate;
     public bool isActive;
+    public bool interactOnActivation = false;
 
     private int callsCount = 0;
 
@@ -33,6 +38,10 @@ public class ToolActionObjectScript : MonoBehaviour
         if (callsCount == requiresCallsToActivate)
         {
             isActive = true;
+            if (interactOnActivation)
+            {
+                Interaction();
+            }
         }
     }
 
@@ -43,6 +52,7 @@ public class ToolActionObjectScript : MonoBehaviour
         if (callsCount != requiresCallsToActivate)
         {
             isActive = false;
+            deactivationEvent.Invoke();
         }
     }
 

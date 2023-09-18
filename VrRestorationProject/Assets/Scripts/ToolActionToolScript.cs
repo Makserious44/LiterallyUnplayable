@@ -15,6 +15,9 @@ public class ToolActionToolScript : MonoBehaviour
     [TagField]
     [SerializeField] public string tagToInteract;
 
+    public Material activeMaterial;
+    public Material inactiveMaterial;
+
     public toolInteractionEvent toolEvent;
     public ToolActionHandScript RightHand;
     public ToolActionHandScript LeftHand;
@@ -64,8 +67,13 @@ public class ToolActionToolScript : MonoBehaviour
     {
         if (other.tag == tagToInteract && holdingHandsCount > 0 && other.gameObject.GetComponent<ToolActionObjectScript>().isActive)
         {
+            GetComponent<MeshRenderer>().material = activeMaterial;
             UpdateHand(RightHand, other);
             UpdateHand(LeftHand, other);
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        GetComponent<MeshRenderer>().material = inactiveMaterial;
     }
 }
