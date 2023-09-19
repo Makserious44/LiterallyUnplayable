@@ -23,14 +23,11 @@ public class PaintingCanvasPopScript : MonoBehaviour
 
     public void canvasPop()
     {
-        transform.parent = null;
-        fixedJoint.connectedBody = null;
+        transform.parent
+
         fixedJoint.breakForce = 0f;
 
-        interactable.enabled = true;
         objectReturn.enabled = true;
-
-        complexThrowableCopy.enabled = true;
         toolActionToolScript.enabled = true;
 
         Debug.Log($"{gameObject.name} popped");
@@ -58,26 +55,28 @@ public class PaintingCanvasPopScript : MonoBehaviour
         if (objectReturn.isHeld && transform.parent != null)
         {
             Debug.Log($"{gameObject.name} unfixed");
-            complexThrowableCopy.enabled = true;
             transform.parent = null;
         }
     }
 
     public void canvasReturn()
-    {
+    { 
+        if (fixedJoint == null)
+        {
+            interactable.attachedToHand.DetachObject(this.gameObject, false);
+
+            fixedJoint = gameObject.AddComponent<FixedJoint>();
+            fixedJoint.connectedBody = parentObject.GetComponent<Rigidbody>();
+        }
         transform.parent = parentObject;
         transform.position = Vector3.zero;
         transform.rotation = new Quaternion();
-
-        fixedJoint.connectedBody = parentObject.GetComponent<Rigidbody>();
-        complexThrowableCopy.enabled = false;
     }
 
     public void canvasFix()
     {
         if (transform.parent != null)
         {
-            interactable.enabled = false;
             objectReturn.enabled = false;
             toolActionToolScript.enabled = false;
         }

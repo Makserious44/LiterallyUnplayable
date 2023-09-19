@@ -42,6 +42,7 @@ public class ToolActionHandScript : MonoBehaviour
         {
             if (HandInteractButton.GetStateDown(Hand))
             {
+
                 other.gameObject.GetComponent<LeafHolderScript>().Interaction();
             }
         }

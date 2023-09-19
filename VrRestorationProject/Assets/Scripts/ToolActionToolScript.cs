@@ -25,6 +25,14 @@ public class ToolActionToolScript : MonoBehaviour
     private int holdingHandsCount;
     private Animator animator;
 
+    protected void dropTool()
+    {
+        if (RightHand.isGrabbing)
+        {
+            RightHand.Hand.
+        }
+    }
+
     private void stopAnim()
     {
         animator.SetBool("isInAction", false);
@@ -47,7 +55,7 @@ public class ToolActionToolScript : MonoBehaviour
             toolEvent.Invoke();
         }
         //animator.Play("BrushAction");
-        Destroy(TriggerObject.gameObject, 2);
+        //Destroy(TriggerObject.gameObject, 2);
     }
 
     private void UpdateHand(ToolActionHandScript Hand, Collider TriggerObject)
