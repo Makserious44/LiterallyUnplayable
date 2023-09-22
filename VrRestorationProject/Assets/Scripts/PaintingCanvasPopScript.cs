@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
@@ -13,7 +14,7 @@ using Valve.VR.InteractionSystem;
 
 public class PaintingCanvasPopScript : MonoBehaviour
 {
-    private Transform parentObject;
+    public Transform parentObject;
 
     private Interactable interactable;
     private ObjectReturn objectReturn;
@@ -23,7 +24,7 @@ public class PaintingCanvasPopScript : MonoBehaviour
 
     public void canvasPop()
     {
-        transform.parent
+        transform.parent = null;
 
         fixedJoint.breakForce = 0f;
 
@@ -40,8 +41,6 @@ public class PaintingCanvasPopScript : MonoBehaviour
         fixedJoint = GetComponent<FixedJoint>();
         complexThrowableCopy = GetComponent<ComplexThrowableCopy>();
         toolActionToolScript = GetComponent<ToolActionToolScript>();
-
-        parentObject = transform.parent;
 
         //interactable.enabled = false;
         objectReturn.enabled = false;
@@ -63,14 +62,14 @@ public class PaintingCanvasPopScript : MonoBehaviour
     { 
         if (fixedJoint == null)
         {
-            interactable.attachedToHand.DetachObject(this.gameObject, false);
+            interactable.attachedToHand.DetachObject(this.gameObject, true);
 
             fixedJoint = gameObject.AddComponent<FixedJoint>();
             fixedJoint.connectedBody = parentObject.GetComponent<Rigidbody>();
         }
-        transform.parent = parentObject;
-        transform.position = Vector3.zero;
-        transform.rotation = new Quaternion();
+        transform.SetParent(parentObject, false);
+        //transform.localPosition = Vector3.zero;
+        //transform.localRotation = new Quaternion();
     }
 
     public void canvasFix()

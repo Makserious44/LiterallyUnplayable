@@ -25,14 +25,6 @@ public class ToolActionToolScript : MonoBehaviour
     private int holdingHandsCount;
     private Animator animator;
 
-    protected void dropTool()
-    {
-        if (RightHand.isGrabbing)
-        {
-            RightHand.Hand.
-        }
-    }
-
     private void stopAnim()
     {
         animator.SetBool("isInAction", false);
