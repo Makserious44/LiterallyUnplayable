@@ -781,6 +781,17 @@ MonoBehaviour:
   requiresCallsToActivate: 0
   isActive: 0
   interactOnActivation: 0
+--- !u!114 &974614585 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6739328438965683790, guid: fd0be9ac25a7f2f4b89abdd3da0ede7a, type: 3}
+  m_PrefabInstance: {fileID: 8376247190404049169}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a8131fcfdcb404587352a1de6b2156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1036861012 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 883463849919760287, guid: 97f18b8399eb5a744a717b8378b6e2d5, type: 3}
@@ -1577,6 +1588,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5726108759074601305, guid: fd0be9ac25a7f2f4b89abdd3da0ede7a, type: 3}
+      propertyPath: m_ConnectedMassScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5726108759074601305, guid: fd0be9ac25a7f2f4b89abdd3da0ede7a, type: 3}
+      propertyPath: m_EnablePreprocessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5795321633228504231, guid: fd0be9ac25a7f2f4b89abdd3da0ede7a, type: 3}
       propertyPath: LeftHand
       value: 
@@ -1585,6 +1604,34 @@ PrefabInstance:
       propertyPath: RightHand
       value: 
       objectReference: {fileID: 1571182940}
+    - target: {fileID: 6700068609330312449, guid: fd0be9ac25a7f2f4b89abdd3da0ede7a, type: 3}
+      propertyPath: interactionObject.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700068609330312449, guid: fd0be9ac25a7f2f4b89abdd3da0ede7a, type: 3}
+      propertyPath: interactionObject.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700068609330312449, guid: fd0be9ac25a7f2f4b89abdd3da0ede7a, type: 3}
+      propertyPath: interactionObject.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 974614585}
+    - target: {fileID: 6700068609330312449, guid: fd0be9ac25a7f2f4b89abdd3da0ede7a, type: 3}
+      propertyPath: interactionObject.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700068609330312449, guid: fd0be9ac25a7f2f4b89abdd3da0ede7a, type: 3}
+      propertyPath: interactionObject.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: canvasPop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700068609330312449, guid: fd0be9ac25a7f2f4b89abdd3da0ede7a, type: 3}
+      propertyPath: interactionObject.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PaintingCanvasPopScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700068609330312449, guid: fd0be9ac25a7f2f4b89abdd3da0ede7a, type: 3}
+      propertyPath: interactionObject.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6739328438965683790, guid: fd0be9ac25a7f2f4b89abdd3da0ede7a, type: 3}
       propertyPath: parentObject
       value: 

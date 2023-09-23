@@ -51,15 +51,19 @@ public class PaintingCanvasPopScript : MonoBehaviour
 
     private void Update()
     {
-        if (objectReturn.isHeld && transform.parent != null)
+        /*if (objectReturn.isHeld && transform.parent != null)
         {
             Debug.Log($"{gameObject.name} unfixed");
             transform.parent = null;
-        }
+        }*/
     }
 
     public void canvasReturn()
-    { 
+    {
+        interactable.attachedToHand.DetachObject(this.gameObject, true);
+        transform.SetParent(parentObject, true);
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.Euler(-90, 0, 0);
         if (fixedJoint == null)
         {
             interactable.attachedToHand.DetachObject(this.gameObject, true);
@@ -67,9 +71,7 @@ public class PaintingCanvasPopScript : MonoBehaviour
             fixedJoint = gameObject.AddComponent<FixedJoint>();
             fixedJoint.connectedBody = parentObject.GetComponent<Rigidbody>();
         }
-        transform.SetParent(parentObject, false);
-        //transform.localPosition = Vector3.zero;
-        //transform.localRotation = new Quaternion();
+        Debug.Log("Canvs fixed");
     }
 
     public void canvasFix()

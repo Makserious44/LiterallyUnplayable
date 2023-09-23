@@ -63,11 +63,18 @@ public class ToolActionToolScript : MonoBehaviour
         holdingHandsCount = GetComponent<ComplexThrowableCopy>().holdingHands.Count;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == tagToInteract && holdingHandsCount > 0 && other.gameObject.GetComponent<ToolActionObjectScript>().isActive)
         {
             GetComponent<MeshRenderer>().material = activeMaterial;
+        }            
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == tagToInteract && holdingHandsCount > 0 && other.gameObject.GetComponent<ToolActionObjectScript>().isActive)
+        {
             UpdateHand(RightHand, other);
             UpdateHand(LeftHand, other);
         }
