@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class ToolActionHandScript : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class ToolActionHandScript : MonoBehaviour
     public bool isGrabbing;
     public bool isInteracting;
     public SteamVR_Input_Sources Hand;
+    public Hand HandHand;
     public SteamVR_Action_Boolean HandGripButton;
     public SteamVR_Action_Boolean HandInteractButton;
 
@@ -42,9 +44,16 @@ public class ToolActionHandScript : MonoBehaviour
         {
             if (HandInteractButton.GetStateDown(Hand))
             {
-
-                other.gameObject.GetComponent<LeafHolderScript>().Interaction();
+                if(other.gameObject.TryGetComponent<LeafHolderScript>(out LeafHolderScript leafHolderScript))
+                {
+                    leafHolderScript.Interaction();
+                }
             }
         }
     }
+
+    /*public void dropItem(GameObject item)
+    {
+        HandHand.DetachObject(item);
+    }*/
 }

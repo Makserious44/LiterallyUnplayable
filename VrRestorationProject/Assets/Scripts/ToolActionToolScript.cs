@@ -15,8 +15,9 @@ public class ToolActionToolScript : MonoBehaviour
     [TagField]
     [SerializeField] public string tagToInteract;
 
-    public Material activeMaterial;
-    public Material inactiveMaterial;
+    public static Material activeMaterial;
+    public static Material inactiveMaterial;
+    public bool toggleTriggerDebug;
 
     public toolInteractionEvent toolEvent;
     public ToolActionHandScript RightHand;
@@ -33,6 +34,8 @@ public class ToolActionToolScript : MonoBehaviour
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        activeMaterial = Resources.Load<Material>("DebugActive");
+        inactiveMaterial = Resources.Load<Material>("DebugInactive");
     }
 
     private void InteractAction(Collider TriggerObject)
@@ -65,7 +68,7 @@ public class ToolActionToolScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == tagToInteract && holdingHandsCount > 0 && other.gameObject.GetComponent<ToolActionObjectScript>().isActive)
+        if (other.tag == tagToInteract && holdingHandsCount > 0 && other.gameObject.GetComponent<ToolActionObjectScript>().isActive && toggleTriggerDebug)
         {
             GetComponent<MeshRenderer>().material = activeMaterial;
         }            
@@ -81,6 +84,9 @@ public class ToolActionToolScript : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        GetComponent<MeshRenderer>().material = inactiveMaterial;
+        if (toggleTriggerDebug)
+        {
+            GetComponent<MeshRenderer>().material = inactiveMaterial;
+        }
     }
 }

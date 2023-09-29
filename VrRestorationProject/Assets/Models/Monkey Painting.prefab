@@ -319,7 +319,6 @@ GameObject:
   - component: {fileID: 837741801952977790}
   - component: {fileID: 2984901093387103426}
   - component: {fileID: 6352128029112954464}
-  - component: {fileID: 1428508336353742579}
   m_Layer: 0
   m_Name: Monkey Painting
   m_TagString: Untagged
@@ -453,33 +452,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHeld: 0
---- !u!114 &1428508336353742579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3771660716519561406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd2fbd583955d7d47a441d242aa29c6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  callObject:
-    m_PersistentCalls:
-      m_Calls: []
-  decallObject:
-    m_PersistentCalls:
-      m_Calls: []
-  interactionObject:
-    m_PersistentCalls:
-      m_Calls: []
-  deactivationEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  requiresCallsToActivate: 0
-  isActive: 1
-  interactOnActivation: 0
 --- !u!1 &6723665987542995072
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a8131fcfdcb404587352a1de6b2156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentObject: {fileID: 4758903516430696953}
 --- !u!114 &357226836305728608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,8 +724,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagToInteract: PictureFrame
-  activeMaterial: {fileID: 2100000, guid: fd7dddbf8b356934a835b20f8f1381c2, type: 2}
-  inactiveMaterial: {fileID: 2100000, guid: f8ae9526bcbc83e41b7d0dd62694d64d, type: 2}
   toolEvent:
     m_PersistentCalls:
       m_Calls:
