@@ -40,6 +40,7 @@ public class ToolActionToolScript : MonoBehaviour
 
     private void InteractAction(Collider TriggerObject)
     {
+        TriggerObject.gameObject.GetComponent<ToolActionObjectScript>().Interaction();
         if (animator != null)
         {
             animator.SetBool("isInAction", true);
@@ -49,7 +50,7 @@ public class ToolActionToolScript : MonoBehaviour
         {
             toolEvent.Invoke();
         }
-        //animator.Play("BrushAction");
+        //animator.Play("ToolAction");
         //Destroy(TriggerObject.gameObject, 2);
     }
 
@@ -70,7 +71,11 @@ public class ToolActionToolScript : MonoBehaviour
     {
         if (other.tag == tagToInteract && holdingHandsCount > 0 && other.gameObject.GetComponent<ToolActionObjectScript>().isActive && toggleTriggerDebug)
         {
-            GetComponent<MeshRenderer>().material = activeMaterial;
+            if (TryGetComponent<MeshRenderer>(out MeshRenderer meshRenderer))
+            {
+                meshRenderer.material = activeMaterial;
+            }
+            
         }            
     }
 
@@ -86,7 +91,11 @@ public class ToolActionToolScript : MonoBehaviour
     {
         if (toggleTriggerDebug)
         {
-            GetComponent<MeshRenderer>().material = inactiveMaterial;
+            if (TryGetComponent<MeshRenderer>(out MeshRenderer meshRenderer))
+            {
+                meshRenderer.material = inactiveMaterial;
+            }
+
         }
     }
 }

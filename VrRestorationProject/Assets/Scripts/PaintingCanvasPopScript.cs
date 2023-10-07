@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
@@ -10,6 +12,12 @@ using Valve.VR.InteractionSystem;
 [RequireComponent(typeof(ObjectReturn))]
 [RequireComponent(typeof(ToolActionToolScript))]
 [RequireComponent(typeof(FixedJoint))]
+
+[Serializable]
+public class onPopEvent : UnityEvent {}
+
+[Serializable]
+public class onFixEvent : UnityEvent { }
 
 
 public class PaintingCanvasPopScript : MonoBehaviour
@@ -22,6 +30,9 @@ public class PaintingCanvasPopScript : MonoBehaviour
     private ComplexThrowableCopy complexThrowableCopy;
     private ToolActionToolScript toolActionToolScript;
 
+    public onPopEvent onPopCall;
+    public onFixEvent onFixCall;
+
     public void canvasPop()
     {
         transform.parent = null;
@@ -30,6 +41,8 @@ public class PaintingCanvasPopScript : MonoBehaviour
 
         objectReturn.enabled = true;
         toolActionToolScript.enabled = true;
+
+        onPopCall.Invoke();
 
         Debug.Log($"{gameObject.name} popped");
     }
@@ -76,6 +89,9 @@ public class PaintingCanvasPopScript : MonoBehaviour
             fixedJoint.connectedBody = parentObject.GetComponent<Rigidbody>();
             //fixedJoint.breakForce = 10f;
         }
+
+        onFixCall.Invoke();
+
         Debug.Log("Canvs fixed");
     }
 

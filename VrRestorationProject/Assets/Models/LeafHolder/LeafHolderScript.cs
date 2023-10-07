@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class leafHolderCall : UnityEvent {}
 
 [Serializable]
-public class leafHolderDecall : UnityEvent { }
+public class leafHolderDecall : UnityEvent {}
 
 public class LeafHolderScript : MonoBehaviour
 {

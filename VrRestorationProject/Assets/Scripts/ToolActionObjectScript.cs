@@ -5,12 +5,6 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable]
-public class callObjectsActivate : UnityEvent {}
-
-[Serializable]
-public class callObjectsDectivate : UnityEvent { }
-
-[Serializable]
 public class callObjectInteract : UnityEvent { }
 
 [Serializable]
@@ -18,8 +12,6 @@ public class callObjectDeactivateEvent : UnityEvent { }
 
 public class ToolActionObjectScript : MonoBehaviour
 {
-    public callObjectsActivate callObject;
-    public callObjectsDectivate decallObject;
     public callObjectInteract interactionObject;
     public callObjectDeactivateEvent deactivationEvent;
 
