@@ -180,7 +180,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978240d25a9b9fb44a1234524eace55e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToInteract: RemovedByBrush
+  tagToInteract: InteractsWithBrush
+  toggleTriggerDebug: 1
+  toolEvent:
+    m_PersistentCalls:
+      m_Calls: []
   RightHand: {fileID: 0}
   LeftHand: {fileID: 0}
 --- !u!1 &8968883958394957873
