@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using Valve.VR;
@@ -31,8 +32,16 @@ public class ToolActionToolScript : MonoBehaviour
         animator.SetBool("isInAction", false);
     }
 
-    private void Start()
+    void Start()
     {
+        if (RightHand ==  null)
+        {
+            RightHand = GameObject.FindWithTag("RightHand").GetComponent<ToolActionHandScript>();
+        }
+        if (LeftHand == null)
+        {
+            LeftHand = GameObject.FindWithTag("LeftHand").GetComponent<ToolActionHandScript>();
+        }
         animator = GetComponentInChildren<Animator>();
         activeMaterial = Resources.Load<Material>("DebugActive");
         inactiveMaterial = Resources.Load<Material>("DebugInactive");
