@@ -6,6 +6,8 @@ using UnityEngine;
 public class PrefabSpawnerScript : MonoBehaviour
 {
     public GameObject prefab;
+    public GameObject spawnPlatform;
+
     private GameObject objectSpawned;
     public void spawnPrefab()
     {
@@ -13,7 +15,7 @@ public class PrefabSpawnerScript : MonoBehaviour
         {
             Destroy(objectSpawned);
         }
-        Vector3 spawmPosition = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
+        Vector3 spawmPosition = new Vector3(spawnPlatform.transform.position.x, spawnPlatform.transform.position.y + 0.1f, spawnPlatform.transform.position.z);
         objectSpawned = Instantiate(prefab, spawmPosition, Quaternion.identity);
     }
 }
