@@ -8,14 +8,27 @@ public class PrefabSpawnerScript : MonoBehaviour
     public GameObject prefab;
     public GameObject spawnPlatform;
 
-    private GameObject objectSpawned;
+    private GameObject objectArtSpawned;
+    private GameObject objectToolSpawned;
+    private GameObject objectMiscSpawned;
+
     public void spawnPrefab()
     {
-        if (objectSpawned != null)
+        Vector3 spawnPosition = new Vector3(spawnPlatform.transform.position.x, spawnPlatform.transform.position.y + 0.1f, spawnPlatform.transform.position.z);
+        switch (prefab.tag)
         {
-            Destroy(objectSpawned);
+            case "Art":
+                if (objectArtSpawned != null) Destroy(objectArtSpawned);
+                objectArtSpawned = Instantiate(prefab, spawnPosition, Quaternion.identity);
+                break;
+            case "Tool":
+                if (objectToolSpawned != null) Destroy(objectToolSpawned);
+                objectToolSpawned = Instantiate(prefab, spawnPosition, Quaternion.identity);
+                break;
+            default:
+                if (objectMiscSpawned) Destroy(objectMiscSpawned);
+                objectMiscSpawned = Instantiate(prefab, spawnPosition, Quaternion.identity);
+                break;
         }
-        Vector3 spawmPosition = new Vector3(spawnPlatform.transform.position.x, spawnPlatform.transform.position.y + 0.1f, spawnPlatform.transform.position.z);
-        objectSpawned = Instantiate(prefab, spawmPosition, Quaternion.identity);
     }
 }

@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 6352128029112954464}
   m_Layer: 0
   m_Name: Monkey Painting
-  m_TagString: Untagged
+  m_TagString: Art
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
