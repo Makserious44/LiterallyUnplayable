@@ -752,7 +752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7040308134894984980}
   m_Layer: 0
-  m_Name: Sofa
+  m_Name: Sofa - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
