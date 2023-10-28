@@ -51,7 +51,15 @@ public class PaintingCanvasPopScript : MonoBehaviour
     {
         interactable = GetComponent<Interactable>();
         objectReturn = GetComponent<ObjectReturn>();
-        fixedJoint = GetComponent<FixedJoint>();
+        if (fixedJoint == null)
+        {
+            fixedJoint = gameObject.AddComponent<FixedJoint>();
+            fixedJoint.connectedBody = parentObject.GetComponent<Rigidbody>();
+        }
+        else
+        {
+            fixedJoint = GetComponent<FixedJoint>();
+        }
         complexThrowableCopy = GetComponent<ComplexThrowableCopy>();
         toolActionToolScript = GetComponent<ToolActionToolScript>();
 
