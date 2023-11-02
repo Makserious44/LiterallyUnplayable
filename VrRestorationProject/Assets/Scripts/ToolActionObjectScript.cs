@@ -18,6 +18,7 @@ public class ToolActionObjectScript : MonoBehaviour
     public int requiresCallsToActivate;
     public bool isActive;
     public bool interactOnActivation = false;
+    public bool deactivateOnInteraction = true;
 
     private int callsCount = 0;
 
@@ -52,6 +53,9 @@ public class ToolActionObjectScript : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} activated");
         interactionObject.Invoke();
-        isActive = false;
+        if (deactivateOnInteraction)
+        {
+            isActive = false;
+        }
     }
 }

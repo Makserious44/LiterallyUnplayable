@@ -12,6 +12,8 @@ TagManager:
   - Art
   - Tool
   - ForcepsGrabbable
+  - InteractsWithPliers
+  - InteractsWithForceps
   layers:
   - Default
   - TransparentFX
