@@ -11,6 +11,7 @@ TagManager:
   - RightHand
   - Art
   - Tool
+  - ForcepsGrabbable
   layers:
   - Default
   - TransparentFX
