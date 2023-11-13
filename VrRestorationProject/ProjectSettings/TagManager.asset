@@ -14,6 +14,10 @@ TagManager:
   - ForcepsGrabbable
   - InteractsWithPliers
   - InteractsWithForceps
+  - IntercatsWithOiledBrush
+  - BrushPaint
+  - Water
+  - InteractsWithSponge
   layers:
   - Default
   - TransparentFX

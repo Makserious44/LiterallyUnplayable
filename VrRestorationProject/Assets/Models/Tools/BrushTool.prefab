@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 142805147841355749}
   - component: {fileID: 2198947310180828076}
   - component: {fileID: 5495876602335852988}
+  - component: {fileID: 3240674661720149763}
   m_Layer: 0
   m_Name: BrushTool
   m_TagString: Tool
@@ -187,6 +188,18 @@ MonoBehaviour:
       m_Calls: []
   RightHand: {fileID: 0}
   LeftHand: {fileID: 0}
+--- !u!114 &3240674661720149763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164757201524412772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ceb80373282e4948bc6eb5038195f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8968883958394957873
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,6 +212,7 @@ GameObject:
   - component: {fileID: 6539211985667261689}
   - component: {fileID: 912809630589031379}
   - component: {fileID: 8637739038556336298}
+  - component: {fileID: 6863706092545186191}
   m_Layer: 0
   m_Name: Brush
   m_TagString: Untagged
@@ -292,3 +306,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6863706092545186191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8968883958394957873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af35a2eadc0d1b9428b0378377ff74b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 4fc9d7a61730df344ae36a3a90f68d86, type: 2}

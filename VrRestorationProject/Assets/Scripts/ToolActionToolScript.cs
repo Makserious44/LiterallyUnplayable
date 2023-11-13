@@ -20,7 +20,7 @@ public class ToolActionToolScript : MonoBehaviour
     public static Material inactiveMaterial;
     public bool toggleTriggerDebug;
 
-    public toolInteractionEvent toolEvent;
+    public toolInteractionEvent onToolInteractionEvent;
     public ToolActionHandScript RightHand;
     public ToolActionHandScript LeftHand;
 
@@ -35,13 +35,10 @@ public class ToolActionToolScript : MonoBehaviour
     void Start()
     {
         if (RightHand ==  null)
-        {
             RightHand = GameObject.FindWithTag("RightHand").GetComponent<ToolActionHandScript>();
-        }
         if (LeftHand == null)
-        {
             LeftHand = GameObject.FindWithTag("LeftHand").GetComponent<ToolActionHandScript>();
-        }
+
         animator = GetComponentInChildren<Animator>();
         activeMaterial = Resources.Load<Material>("DebugActive");
         inactiveMaterial = Resources.Load<Material>("DebugInactive");
@@ -55,10 +52,9 @@ public class ToolActionToolScript : MonoBehaviour
             animator.SetBool("isInAction", true);
             Invoke("stopAnim", 2);
         }
-        if (toolEvent != null)
-        {
-            toolEvent.Invoke();
-        }
+
+        if (onToolInteractionEvent != null)
+            onToolInteractionEvent.Invoke();
         //animator.Play("ToolAction");
         //Destroy(TriggerObject.gameObject, 2);
     }
@@ -66,9 +62,7 @@ public class ToolActionToolScript : MonoBehaviour
     private void UpdateHand(ToolActionHandScript Hand, Collider TriggerObject)
     {
         if (Hand.isGrabbing && Hand.isInteracting)
-        {
             InteractAction(TriggerObject);
-        }
     }
 
     private void Update()
@@ -78,13 +72,13 @@ public class ToolActionToolScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"Object Tag: {other.tag}\nObject Action Script: {other.GetComponent<ToolActionObjectScript>()}\nHolding Hands: {holdingHandsCount}");
         if (other.tag == tagToInteract && holdingHandsCount > 0 && other.gameObject.GetComponent<ToolActionObjectScript>().isActive && toggleTriggerDebug)
         {
             if (TryGetComponent<MeshRenderer>(out MeshRenderer meshRenderer))
-            {
                 meshRenderer.material = activeMaterial;
-            }
-            
+            else
+                GetComponentInChildren<MeshRenderer>().material = activeMaterial;
         }            
     }
 
@@ -101,9 +95,9 @@ public class ToolActionToolScript : MonoBehaviour
         if (toggleTriggerDebug)
         {
             if (TryGetComponent<MeshRenderer>(out MeshRenderer meshRenderer))
-            {
                 meshRenderer.material = inactiveMaterial;
-            }
+            else
+                GetComponentInChildren<MeshRenderer>().material = inactiveMaterial;
 
         }
     }
